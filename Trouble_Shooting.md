@@ -4,6 +4,24 @@
 
 <br>
 
+### 커스텀 메시지 관련 이슈?
+
+참조 : https://m.blog.naver.com/nswve/222031819104
+
+1. 작업공간 내 msg 폴더 형성하고, 폴더 안에 파일 생성
+![msg](https://user-images.githubusercontent.com/84503980/204326203-c27e73e6-8b1f-4a07-9af6-82922e0a683d.png)
+
+
+2. **CMakeLists.txt** 파일 수정
+
+- ***find_package***에 *message_generation* 추가
+- ***add_message_files***에 메세지 파일 추가!
+- ***generate_messages***에 *std_msgs* 활성화
+
+3. **Catkin_make**
+
+<br>
+
 ### 패키지를 다운 받았는데, 계속 없다는 에러가 발생할 경우?
 - 경로 문제일 가능성이 농후하다. 아래의 코드를 통해 경로를 확인하고, 필요시 수정하라
 ```
