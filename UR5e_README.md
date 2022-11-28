@@ -1,5 +1,9 @@
 # How to Use UR5e?
 
+작성자 : 21700469 유진수
+
+참조 : https://github.com/UniversalRobots/Universal_Robots_ROS_Driver
+
 <br>
 
 ## 1. 환경 설정
