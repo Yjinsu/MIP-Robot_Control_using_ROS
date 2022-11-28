@@ -27,6 +27,10 @@ sudo apt install --reinstall ros-melodic-realsense2-description
 ### Realsense Depth Camera 실행
 ```
 roslaunch realsense2_camera rs_camera.launch
+
+# Depth & Color 프레임 사이즈를 동일하게 조절하여 이미지를 취득하고 싶다면?
+roslaunch realsense2_camera rs_camera.launch align_depth:=true
+
 ```
 launch 파일은 opt/ros/melodic/share/realsense_camera_launch 에 저장되어 있다.
 
@@ -68,94 +72,20 @@ tar -xvzf calibrationdata.tar.gz
 mv ost.txt ost.ini
 ```
 
+<br>
 
+4. 카메라 파라미터 파일 생성
 ```
-
-# 작업 공간 생성
-mkdir -p handong_ws/src
-
-
-# Clone the driver
-git clone https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git src/Universal_Robots_ROS_Driver
-
-
-# Clone the description. Currently, it is necessary to use the melodic-devel branch.
-git clone -b melodic-devel https://github.com/ros-industrial/universal_robot.git src/universal_robot
-
-
-# Install dependencies
-sudo apt update -qq
-rosdep update
-rosdep install --from-paths src --ignore-src -y
-
-
-# Build the workspace
-catkin_make
+rosrun camera_calibration_parsers convert ost.ini camera.yaml
 ```
-
-### 경로 설정
-```
-# 터미널 실행 시 해당 경로에 접근, 쉘 활성화 (환경설정 초기 1회만 수행)
-source devel/setup.bash 
-
-# 현재 경로 확인이 필요하다면?
-cat ~/.bashrc
-
-#경로 수정이 필요하다면?
-sudo gedit ~/.bashrc 
-```
-
-### 조인트를 조절할 수 있는 컨트롤러 다운로드
-```
-sudo apt install ros-melodic-rqt-joint-trajectory-controller 
-
-sudo apt-get upgrade
-```
+- 실행이 안 될 경우 **catkin_make**를 시도하라.
+- **catkin_make** 에서 오류 발생 시, 경로를 확인하라 (source /opt/ros/$ROS_DISTRO/setup.bash)
 
 <br>
 
-## 2. 시뮬레이션
-
-<br>
-
-### UR Gazebo 실행
+5. 파라미터 참조
 ```
-roslaunch ur_gazebo ur5e_bringup.launch
-
-roslaunch ur5e_sim_moveit_config move_group.launch
-
-# 조인트 컨트롤러가 잘 동작되는지 시뮬레이션으로 확인하고 싶다면?
-rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller 
+mkdir ~/.ros/camera_info
+mv camera.yaml ~/.ros/camera_info/
 ```
-
-
-
-
-### 웹캠 카메라 전원 On & 이미지 프로세싱
-```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
-```
-
-<br>
-
-## 3. 로봇 실제 구동
-
-<br>
-
-### UR5e와 컴퓨터 간 IP 연결
-```
-roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
-
-roslaunch ur5e_real_moveit_config move_group.launch
-```
-
-### 웹캠 카메라 전원 On & 이미지 프로세싱
-```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
-```
-
 
