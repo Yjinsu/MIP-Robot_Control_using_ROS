@@ -1,5 +1,7 @@
 # 이슈사항 발생 시 해결 방법
 
+참조 : https://github.com/hyKangHGU/ROS_Ubuntu_18_04/blob/main/ROS%20-%20Python3_version_up.md
+
 <br>
 
 ### 패키지를 다운 받았는데, 계속 없다는 에러가 발생할 경우?
