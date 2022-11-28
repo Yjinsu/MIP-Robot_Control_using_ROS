@@ -60,3 +60,15 @@ ls -al
 chmod +x filename.py
 ```
 
+<br>
+
+### QR코드 사용 관련 이슈?
+
+- 아래의 코드를 통해, QR코드를 읽는 모델 **pyzbar**를 다운로드한다
+```
+pip install pyzbar
+```
+- **ImportError: Unable to find zbar shared library** 오류가 발생할 경우?
+```
+sudo apt install libzbar0
+```
