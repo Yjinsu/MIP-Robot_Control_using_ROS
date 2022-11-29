@@ -60,6 +60,17 @@ sudo apt install ros-melodic-rqt-joint-trajectory-controller
 sudo apt-get upgrade
 ```
 
+### Moveit Setup Assistant (moveit 설정 바꾸는 소프트웨어)
+```
+# Simulation
+roslaunch ur5e_sim_moveit_config setup_assistant.launch 
+
+# Real
+roslaunch ur5e_real_moveit_config setup_assistant.launch 
+
+
+```
+
 <br>
 
 ## 2. 시뮬레이션
