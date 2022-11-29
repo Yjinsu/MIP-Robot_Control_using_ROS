@@ -31,5 +31,5 @@ rosrun ur_interface Image_Processing.py
 
 ## 3. 로봇 제어
 ```
-
+rosrun ur_interface closed_loop_system
 ```
