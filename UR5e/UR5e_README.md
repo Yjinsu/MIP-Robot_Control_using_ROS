@@ -94,19 +94,28 @@ rosrun ur_interface Image_Processing.py
 
 ### 1. UR5e 컨트롤 박스 & 노트북 간 이더넷 통신 (랜선 연결)
 
-### 2. 노트북 IP와 UR5e IP 통일
+- 랜선을 연결해줍니다.
 
-- 피치펜던트 상단의 최우측 탭 클릭 -> 시스템 -> 네트워크
-- IP 주소 = 192.168.0.2
-- 서브넷 마스크 = 255.255.255.0
-
-
-### 3. URCaps External Control 설정
+### 2. URCaps External Control 설정
 
 - 피치펜던트 상단의 "설치" 탭 클릭 -> URCaps -> External Control
 - Host IP: 192.168.0.10
 - Host name: 192.168.0.10
 
+이때 설정하는 IP는 노트북의 IP주소와 동일해야 합니다.
+![Screenshot from 2022-11-29 19-04-39](https://user-images.githubusercontent.com/84503980/204499773-c9cb2cb6-c6e2-4204-947b-4f774e254f5a.png)
+
+IP가 다르다면, 아래와 같이 직접 바꾸어 주시면 됩니다.
+![Screenshot from 2022-11-29 19-06-01](https://user-images.githubusercontent.com/84503980/204500051-3de2099c-51c5-4480-a4d1-3e4e028132dd.png)
+
+
+
+
+### 3. UR5e IP 설정
+
+- 피치펜던트 상단의 최우측 탭 클릭 -> 시스템 -> 네트워크
+- IP 주소 = 192.168.0.2
+- 서브넷 마스크 = 255.255.255.0
 
 ### 4. UR5e와 컴퓨터 간 IP 연결
 
