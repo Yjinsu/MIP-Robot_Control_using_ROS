@@ -88,16 +88,41 @@ rosrun ur_interface Image_Processing.py
 
 <br>
 
-## 3. 로봇 실제 구동
+## 3. 실제 환경에서 로봇 구동
 
-<br>
+피치 펜던트를 비롯한 추가적인 외부 환경 설정이 필요합니다.
 
-### UR5e와 컴퓨터 간 IP 연결
+### 1. UR5e 컨트롤 박스 & 노트북 간 이더넷 통신 (랜선 연결)
+
+### 2. 노트북 IP와 UR5e IP 통일
+
+- 피치펜던트 상단의 최우측 탭 클릭 -> 시스템 -> 네트워크
+- IP 주소 = 192.168.0.2
+- 서브넷 마스크 = 255.255.255.0
+
+
+### 3. URCaps External Control 설정
+
+- 피치펜던트 상단의 "설치" 탭 클릭 -> URCaps -> External Control
+- Host IP: 192.168.0.10
+- Host name: 192.168.0.10
+
+
+### 4. UR5e와 컴퓨터 간 IP 연결
+
+아래의 코드를 터미널에 입력합니다.
 ```
 roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
 
 roslaunch ur5e_real_moveit_config move_group.launch
 ```
+
+### 5. 피치펜던트 로봇 프로그램 설정
+- 피치펜던트 상단의 "프로그램" 탭 클릭 -> URCaps -> External Control
+- 로봇 프로그램 내부에, **Control by 192.168.0.10** 만 떠 있다면, 잘 설정한 것입니다.
+- 설정 이후에는, 피치펜던트 하단의 재생 버튼을 누르면, 외부 코드 입력으로 로봇을 제어할 준비가 모두 끝납니다.
+- 주의사항 : 재생 버튼을 누르기 전에는 4번의 과정 (터미널에 코드 입력)이 반드시 선행되어야 합니다. 그렇지 않을 경우 에러가 발생합니다.
+
 
 ### 웹캠 카메라 전원 On & 이미지 프로세싱
 ```
