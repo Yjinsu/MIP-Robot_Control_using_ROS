@@ -77,13 +77,9 @@ rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 ```
 
 
-
-
-### 웹캠 카메라 전원 On & 이미지 프로세싱
+### 코드 실행 & 시뮬레이션
 ```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
+rosrun ur_interface ur_move_demo
 ```
 
 <br>
@@ -133,11 +129,9 @@ roslaunch ur5e_real_moveit_config move_group.launch
 - 주의사항 : 재생 버튼을 누르기 전에는 4번의 과정 (터미널에 코드 입력)이 반드시 선행되어야 합니다. 그렇지 않을 경우 에러가 발생합니다.
 
 
-### 웹캠 카메라 전원 On & 이미지 프로세싱
+### 실제 로봇 구동
 ```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
+rosrun ur_interface ur_move_demo
 ```
 
 
