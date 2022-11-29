@@ -20,5 +20,16 @@ roslaunch ur5e_real_moveit_config move_group.launch
 
 ## 2. 이미지 취득
 ```
+# 웹캠 전원 On
+rosrun usb_cam usb_cam_node
+
+# 이미지 내부 QR 코드 인식, 메세지 송신
+rosrun ur_interface Image_Processing.py
+```
+
+<br>
+
+## 3. 로봇 제어
+```
 
 ```
