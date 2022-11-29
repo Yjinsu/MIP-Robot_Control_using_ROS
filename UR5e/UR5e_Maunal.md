@@ -129,7 +129,7 @@ roslaunch ur5e_real_moveit_config move_group.launch
 - 주의사항 : 재생 버튼을 누르기 전에는 4번의 과정 (터미널에 코드 입력)이 반드시 선행되어야 합니다. 그렇지 않을 경우 에러가 발생합니다.
 
 
-### 실제 로봇 구동
+### 6. 실제 로봇 구동
 ```
 rosrun ur_interface ur_move_demo
 ```
