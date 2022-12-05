@@ -20,7 +20,7 @@
 
 3. **Catkin_make**
 
-파이썬과 CPP 두 파일로 메세지 송수신을 하고 싶다면?
+파이썬과 CPP 두 파일로 메세지 송수신을 하고 싶다면? \
 참조 : https://www.theconstructsim.com/subscribe-cpp-to-custom-msg-array-published-python/
 
 <br>
