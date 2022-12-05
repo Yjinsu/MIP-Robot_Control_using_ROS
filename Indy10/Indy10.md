@@ -19,15 +19,12 @@ cd ~
 
 
 # 작업 공간 생성
-mkdir -p handong_ws/src
+mkdir -p indy10_ws/src
 
 
-# Clone the driver
-git clone https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git src/Universal_Robots_ROS_Driver
+# Download the package
 
 
-# Clone the description. Currently, it is necessary to use the melodic-devel branch.
-git clone -b melodic-devel https://github.com/ros-industrial/universal_robot.git src/universal_robot
 
 
 # Install dependencies
@@ -52,57 +49,44 @@ cat ~/.bashrc
 sudo gedit ~/.bashrc 
 ```
 
-### 조인트를 조절할 수 있는 컨트롤러 다운로드
-```
-sudo apt install ros-melodic-rqt-joint-trajectory-controller 
 
-sudo apt-get upgrade
+<br>
+
+## 2. 로봇-컴퓨터 간 IP 연결
+
+<br>
+
+
+```
+# 로봇 연결 + 시뮬레이션 실행
+roslaunch indy10_moveit_config moveit_planning_execution.launch robot_ip:=192.168.0.6
+
+# 오직 시뮬레이션만 실행
+roslaunch indy10_gazebo indy10_moveit_gazebo.launch
+```
+
+## 3. 카메라 전원 On & 이미지 프로세싱
+```
+# with align -> 얘 실행시킬 것!
+roslaunch realsense2_camera rs_camera.launch align_depth:=true
+
+# without align
+roslaunch realsense2_camera rs_camera.launch
+
+# 카메라 포트 확인 코드 (Depth Camera가 잘 연결되었는지 확인
+ls -ltr /dev/video*
+
+# 카메라 이미지 수신&영상처리 기법 적용, 메세지 송신
+rosrun indy_driver Image_Processing.py
+
 ```
 
 <br>
 
-## 2. 시뮬레이션
+## 4. 로봇 실제 구동
 
 <br>
 
-### UR Gazebo 실행
 ```
-roslaunch ur_gazebo ur5e_bringup.launch
-
-roslaunch ur5e_sim_moveit_config move_group.launch
-
-# 조인트 컨트롤러가 잘 동작되는지 시뮬레이션으로 확인하고 싶다면?
-rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller 
+rosrun indy_driver Robot_Controller.py
 ```
-
-
-
-
-### 웹캠 카메라 전원 On & 이미지 프로세싱
-```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
-```
-
-<br>
-
-## 3. 로봇 실제 구동
-
-<br>
-
-### UR5e와 컴퓨터 간 IP 연결
-```
-roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
-
-roslaunch ur5e_real_moveit_config move_group.launch
-```
-
-### 웹캠 카메라 전원 On & 이미지 프로세싱
-```
-rosrun usb_cam usb_cam_node
-
-rosrun ur_interface Image_Processing.py
-```
-
-
