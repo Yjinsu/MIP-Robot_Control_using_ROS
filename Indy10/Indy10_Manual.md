@@ -77,39 +77,8 @@ roslaunch indy10_gazebo indy10_moveit_gazebo.launch
 
 
 #### 코드 실행 & 시뮬레이션
-```
-rosrun ur_interface ur_move_demo
-```
 
-<br>
-
-
-
-
-
-```
-
-## 3. 카메라 전원 On & 이미지 프로세싱
-```
-# with align -> 얘 실행시킬 것!
-roslaunch realsense2_camera rs_camera.launch align_depth:=true
-
-# without align
-roslaunch realsense2_camera rs_camera.launch
-
-# 카메라 포트 확인 코드 (Depth Camera가 잘 연결되었는지 확인
-ls -ltr /dev/video*
-
-# 카메라 이미지 수신&영상처리 기법 적용, 메세지 송신
-rosrun indy_driver Image_Processing.py
-
-```
-
-<br>
-
-## 4. 로봇 실제 구동
-
-<br>
+로봇 제어를 위한 예제 코드를 
 
 ```
 rosrun indy_driver Robot_Controller.py
