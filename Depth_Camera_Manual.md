@@ -4,7 +4,7 @@
 
 참조 : https://github.com/IntelRealSense/realsense-ros
 
-Pyrealsens2 설치법 = https://jstar0525.tistory.com/97
+Pyrealsens2 설치법 = https://jstar0525.tistory.com/97 \ 
 pip가 설치 안 되어있다면? https://jjeongil.tistory.com/1274 참고하여 진행하십시오.
 
 
