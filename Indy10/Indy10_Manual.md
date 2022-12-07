@@ -61,7 +61,7 @@ sudo gedit ~/.bashrc
 <br>
 
 
-## 2. 로봇-컴퓨터 간 IP 연결 or Simulation 환경 Open
+## 2. 로봇-컴퓨터 간 IP 연결 or Simulation 환경 연결
 
 아래의 코드를 copy & paste 합니다.
 
@@ -76,10 +76,11 @@ roslaunch indy10_gazebo indy10_moveit_gazebo.launch
 
 
 
-#### 코드 실행 & 시뮬레이션
+## 3. 로봇 제어
 
-로봇 제어를 위한 예제 코드를 
+로봇 제어를 위한 코드를 실행합니다.
 
 ```
+# Example
 rosrun indy_driver Robot_Controller.py
 ```
