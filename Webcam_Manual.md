@@ -1,8 +1,14 @@
 # How to Use Webcam on Ubuntu?
+- 노트북 내장 카메라, USB Webcam 등을 활용하여 이미지를 취득하는 방법
 
-작성자 : 21700469 유진수
+<br>
 
-참조 : https://github.com/IntelRealSense/realsense-ros
+**작성자 : 21700469 유진수**
+
+<br>
+
+
+
 
 Pyrealsens2 설치법 = https://jstar0525.tistory.com/97 pip가 설치 안 되어있다면? https://jjeongil.tistory.com/1274 참고하여 진행할 것.
 
