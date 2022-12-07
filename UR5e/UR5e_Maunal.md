@@ -10,9 +10,9 @@
 
 <br>
 
-### 작업 공간 생성 & Git Clone
+### 1. 작업 공간 생성
 
-아래 코드를 copy & paste 할 것.
+아래 코드를 copy & paste 하여 작업 공간을 생성합니다.
 
 ```
 # Go home directory
@@ -21,9 +21,34 @@ cd ~
 
 # 작업 공간 생성
 mkdir -p handong_ws/src
+```
 
+### 2. src 파일 다운로드 & Catkin_make
 
-# Clone the driver
+본 Repository에 업로드 되어 있는, src zip 파일을 다운로드합니다.
+- Link = 
+
+파일 다운로드 이후, **1. 작업 공간 생성** 을 통해 만든 src 폴더 안에 zip 파일을 압축 해제합니다.
+
+압축 해제가 끝나면, 아래의 코드를 copy & paste 합니다.
+
+```
+# Install dependencies
+sudo apt update -qq
+rosdep update
+rosdep install --from-paths src --ignore-src -y
+
+# Build the workspace
+catkin_make
+```
+
+### 2-2. Git Clone (Skip)
+
+본 md파일의 작성자가 src.zip 파일을 만드는 과정에서 수행한 과정을 기록하였습니다.
+**2. src 파일 다운로드 & Catkin_make** 를 잘 수행했다면, 이미 해당 과정이 종료된 것이므로 이 부분은 생략해도 됩니다.
+
+```
+ # Clone the driver
 git clone https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git src/Universal_Robots_ROS_Driver
 
 
@@ -35,13 +60,10 @@ git clone -b melodic-devel https://github.com/ros-industrial/universal_robot.git
 sudo apt update -qq
 rosdep update
 rosdep install --from-paths src --ignore-src -y
-
-
-# Build the workspace
-catkin_make
 ```
 
-### 경로 설정
+
+### 3. 경로 설정
 ```
 # 터미널 실행 시 해당 경로에 접근, 쉘 활성화 (환경설정 초기 1회만 수행)
 source devel/setup.bash 
@@ -53,14 +75,21 @@ cat ~/.bashrc
 sudo gedit ~/.bashrc 
 ```
 
-### 조인트를 조절할 수 있는 컨트롤러 다운로드
+### 4. 조인트를 조절할 수 있는 컨트롤러 다운로드 (Skip 요망)
+
+해당 부분 또한, 본 md파일의 작성자가 src.zip 파일을 만드는 과정에서 수행한 과정을 기록한 것입니다.
+zip 파일 안에 이미 포함된 부분이므로, 생략해도 좋습니다.
+
 ```
 sudo apt install ros-melodic-rqt-joint-trajectory-controller 
 
 sudo apt-get upgrade
 ```
 
-### Moveit Setup Assistant (moveit 설정 바꾸는 소프트웨어)
+### 5. Moveit Setup Assistant (moveit 설정 바꾸는 소프트웨어)
+
+
+
 ```
 # Simulation
 roslaunch ur5e_sim_moveit_config setup_assistant.launch 
