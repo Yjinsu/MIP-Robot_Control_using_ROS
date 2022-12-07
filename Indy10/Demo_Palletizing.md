@@ -7,6 +7,7 @@
 데모 구현을 위한 사전 환경 설정은, 아래의 링크를 참조하십시오.
 
 - Indy10 초기 설정 : 
+- Depth Camera Setting : 
 
 
 <br>
@@ -26,28 +27,34 @@
 ### 1. 로봇-노트북 연결
 ```
 # Simulation
-roslaunch ur_gazebo ur5e_bringup.launch
-roslaunch ur5e_sim_moveit_config move_group.launch
+roslaunch indy10_gazebo indy10_moveit_gazebo.launch
 
 # Real
-roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
-roslaunch ur5e_real_moveit_config move_group.launch
+roslaunch indy10_moveit_config moveit_planning_execution.launch robot_ip:=192.168.0.6
 ```
 
 <br>
 
-### 2. 이미지 취득
-```
-# 웹캠 전원 On
-rosrun usb_cam usb_cam_node
+### 2. 카메라 전원 On & 이미지 프로세싱
 
-# 이미지 내부 QR 코드 인식, 메세지 송신
-rosrun ur_interface Image_Processing.py
+```
+# Color Frame과 Depth Frame 동기화(with align) -> 얘 실행시킬 것!
+roslaunch realsense2_camera rs_camera.launch align_depth:=true
+
+# without align (참고 목적으로 기록하였으나, 실행시키지 않습니다)
+roslaunch realsense2_camera rs_camera.launch
+
+# 카메라 포트 확인 코드 (Depth Camera가 잘 연결되었는지 확인하고 싶은 경우에만 실행합니다)
+ls -ltr /dev/video*
+
+# 카메라 이미지 수신&영상처리 기법 적용, 메세지 송신
+rosrun indy_driver Image_Processing.py
 ```
 
 <br>
 
-### 3. 로봇 제어
+### 3. 로봇 제어 코드 실행
 ```
-rosrun ur_interface closed_loop_system
+rosrun indy_driver Robot_Controller.py
 ```
+
