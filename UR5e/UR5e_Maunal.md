@@ -174,7 +174,7 @@ roslaunch ur5e_real_moveit_config move_group.launch
 
 #### 6. 실제 로봇 구동
 
-
+로봇 제어를 위한 예제 코드를 실행합니다.
 
 ```
 rosrun ur_interface ur_move_demo
