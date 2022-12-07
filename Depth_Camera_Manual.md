@@ -1,4 +1,4 @@
-# How to Use Realsense Depth camera?
+# How to Use Realsense Depth camera on Ubuntu 18.04?
 
 작성자 : 21700469 유진수
 
