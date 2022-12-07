@@ -73,8 +73,7 @@ roslaunch indy10_moveit_config moveit_planning_execution.launch robot_ip:=192.16
 roslaunch indy10_gazebo indy10_moveit_gazebo.launch
 ```
 
-
-
+<br>
 
 ## 3. 로봇 제어
 
