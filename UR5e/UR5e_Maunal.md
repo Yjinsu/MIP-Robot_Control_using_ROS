@@ -98,8 +98,6 @@ roslaunch ur5e_sim_moveit_config setup_assistant.launch
 
 # Real
 roslaunch ur5e_real_moveit_config setup_assistant.launch 
-
-
 ```
 
 <br>
