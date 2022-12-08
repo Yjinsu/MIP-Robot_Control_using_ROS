@@ -71,7 +71,10 @@ roslaunch ur5e_real_moveit_config move_group.launch
 
 ### 2. 이미지 취득
 ```
-# 웹캠 전원 On
+# Depth Camera 사용 시 아래 코드 실행
+rosrun roslaunch realsense2_camera rs_camera.launch align_depth:=true
+
+# 웹캠 사용 시 아래 코드 실행
 rosrun usb_cam usb_cam_node
 ```
 
