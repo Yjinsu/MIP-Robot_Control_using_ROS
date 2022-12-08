@@ -51,7 +51,7 @@ roslaunch indy10_moveit_config moveit_planning_execution.launch robot_ip:=192.16
 
 <br>
 
-### 2. 카메라 전원 On & 이미지 프로세싱
+### 2. 카메라 전원 On(이미지 취득)
 
 ```
 # Color Frame과 Depth Frame 동기화(with align) -> 얘 실행시킬 것!
