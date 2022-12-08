@@ -20,7 +20,7 @@ cd ~
 
 
 # 작업 공간 생성
-mkdir -p handong_ws/src
+mkdir -p ur5e_ws/src
 ```
 
 #### 2. src 파일 다운로드 & Catkin_make
