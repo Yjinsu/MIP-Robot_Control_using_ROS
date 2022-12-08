@@ -46,6 +46,7 @@ A 상자와 B 상자 안에 물건을 분류 적재하는 방향으로 공정을
 
 적재가 끝난 이후에는, 컨베이어 벨트를 동작시켜 제2의 로봇 앞으로 물건을 송신합니다.
 
+<br><br>
 
 ## 공정 구현
 
@@ -70,14 +71,27 @@ roslaunch ur5e_real_moveit_config move_group.launch
 ```
 # 웹캠 전원 On
 rosrun usb_cam usb_cam_node
-
-# 이미지 내부 QR 코드 인식, 메세지 송신
-rosrun ur_interface Image_Processing.py
 ```
 
 <br>
 
-### 3. 로봇 제어
+### 3. 이미지 프로세싱
+```
+# 이미지 내부 QR 코드 인식, 메세지 송신
+rosrun ur_interface Image_Processing.py
+```
+
+#### 3-1. Description about "Image_Processing.py"
+
+dddd
+
+<br>
+
+### 4. 로봇 제어
 ```
 rosrun ur_interface closed_loop_system
 ```
+
+#### 4-1. Description about "closed_loop_system.cpp"
+
+dddd
