@@ -13,7 +13,7 @@
 
 <br>
 
-#### 1. 작업 공간 생성
+### 1. 작업 공간 생성
 
 아래 코드를 copy & paste 하여 작업 공간을 생성합니다.
 
@@ -26,7 +26,7 @@ cd ~
 mkdir -p indy_ws/src
 ```
 
-#### 2. src 파일 다운로드 & Catkin_make
+### 2. src 파일 다운로드 & Catkin_make
 
 본 Repository에 업로드 되어 있는, indy10 폴더 내 src 파일 전체를 다운로드합니다.
 - [DownLoad Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/tree/main/Indy10/src)
