@@ -45,7 +45,7 @@ rosdep install --from-paths src --ignore-src -y
 catkin_make
 ```
 
-#### 3. 경로 설정
+### 3. 경로 설정
 ```
 # 터미널 실행 시 해당 경로에 접근, 쉘 활성화 (환경설정 초기 1회만 수행)
 source devel/setup.bash 
