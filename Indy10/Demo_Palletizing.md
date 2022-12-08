@@ -62,14 +62,24 @@ roslaunch realsense2_camera rs_camera.launch
 
 # 카메라 포트 확인 코드 (Depth Camera가 잘 연결되었는지 확인하고 싶은 경우에만 실행합니다)
 ls -ltr /dev/video*
-
-# 카메라 이미지 수신&영상처리 기법 적용, 메세지 송신
-rosrun indy_driver Image_Processing.py
 ```
 
 <br>
 
-### 3. 로봇 제어 코드 실행
+### 3. 이미지 프로세싱
+
+```
+rosrun indy_driver Image_Processing.py
+```
+
+#### 3-1. Description about "Image_Processing.py"
+
+해당 코드는, 카메라로부터 이미지를 취득한 뒤 영상처리 기법을 활용하여 로봇에 메세지를 송신하는 코드입니다.
+
+
+
+
+### 4. 로봇 제어 코드 실행
 ```
 rosrun indy_driver Robot_Controller.py
 ```
