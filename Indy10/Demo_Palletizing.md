@@ -84,3 +84,7 @@ rosrun indy_driver Image_Processing.py
 rosrun indy_driver Robot_Controller.py
 ```
 
+#### 4-1. Description about "Robot_Controller.py"
+
+해당 코드는, 송신받은 메시지를 기반으로 순차적으로 로봇에 동작 명령을 내리는 코드입니다.
+
