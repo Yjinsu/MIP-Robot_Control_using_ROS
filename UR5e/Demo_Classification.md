@@ -10,7 +10,7 @@
 
 - Ubuntu 18.04 설치 : [Click This Link](https://ykkim.gitbook.io/dlip/installation-guide/ubuntu/ubuntu-18.04-installation)
 - UR5e 초기 설정 : [Click This Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/UR5e/UR5e_Maunal.md)
-- QR 코드 리더기 패키지 다운로드 : 
+- QR 코드 리더기 패키지 다운로드 : [Click This Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Trouble_Shooting.md)
 - 컨베이어 벨트 환경 구축 :
 
 <br>
