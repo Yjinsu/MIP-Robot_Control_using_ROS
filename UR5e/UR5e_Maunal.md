@@ -25,10 +25,16 @@ mkdir -p ur5e_ws/src
 
 #### 2. src 파일 다운로드 & Catkin_make
 
-본 Repository에 업로드 되어 있는, src zip 파일을 다운로드합니다.
-- Link = 
+본 Repository에 업로드 되어 있는, src 파일을 다운로드합니다.
+- [Click Here to Download](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/tree/main/UR5e/src)
 
-파일 다운로드 이후, **1. 작업 공간 생성** 을 통해 만든 src 폴더 안에 zip 파일을 압축 해제합니다.
+파일 다운로드 이후, **1. 작업 공간 생성** 을 통해 만든 src 폴더 안에 넣어줍니다. <br>
+깃허브 업로드 용량 제한 문제로 인해, src 내부의 **universal_robot** 파일을 zip 형태로 업로드하였습니다. <br>
+따라서, 동일한 폴더 이름으로 압축을 해제하여 주시기 바랍니다.
+
+![image](https://user-images.githubusercontent.com/84503980/206854708-a4a9af44-2ed1-4b40-87e6-df4187645608.png)
+
+위와 같은 형태가 되도록 폴더를 만들어주시면 되겠습니다.
 
 압축 해제가 끝나면, 아래의 코드를 copy & paste 합니다.
 
