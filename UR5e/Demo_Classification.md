@@ -57,12 +57,57 @@ GUI 도구 모음 rqt, 시각화 도구 Rviz, 3차원 시뮬레이터 Gazebo 등
 ### 코드 알고리즘 설명 <br>
 
 본 공정의 핵심은 비전 센서로부터 취득한 이미지를 영상처리 기법을 활용하여 정제하고, 이를 통해 로봇에 적절한 명령을 내리는 것입니다.
-이번 절에서는, 해당 목적을 수행하기 위해 작성한 프로그램에 대해 설명하고자 합니다. 
-
+이번 절에서는 해당 목적을 수행하기 위해 작성한 프로그램에 대해 설명하고자 합니다. 
+코드 내 주석을 기입하였으나, 보다 명확한 전달을 위해 중요한 부분에 대한 보충 설명을 기록하였습니다.
 
 #### 1. Image_Processing.py
 
-카메라로부터 취득한 이미지로부터 QR 코드를 읽어내고, 로봇을 제어하는 노드로 메세지를 보내는 프로그램입니다.
+카메라로부터 취득한 이미지로부터 QR 코드를 읽어내고, 로봇을 제어하는 노드로 메세지를 보내는 프로그램입니다. <br>
+
+<br>
+
+**먼저, main문을 살펴보겠습니다.**
+
+<br>
+
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/84503980/206849956-82f5c30f-241f-4317-849e-4317675893a2.png" width="50%" height="50%" alt="text" width="number" />
+      </p>
+      
+<br/>
+
+**getImage**라는 이름의 노드를 생성했습니다. 메세지를 보내기 위해서는, 노드 생성이 우선되어야 하기 때문입니다.
+
+영상처리 기법을 수행하기 위해서는, 먼저 비전 센서로(=카메라)로부터 취득한 이미지 데이터를 받아 오는 과정이 필요합니다.
+따라서, 아래와 같은 코드를 사용하였습니다.
+
+```
+# Depth Camera 사용 시 아래 코드 실행
+rospy.Subscriber("/camera/color/image_raw", Image, imageCallback)
+
+# 웹캠 사용 시 아래 코드 실행
+rospy.Subscriber("usb_cam/image_raw", Image, imageCallback)
+```
+
+**/camera/color/image_raw**, **usb_cam/image_raw** 부분은 받아 올 토픽의 이름을 의미합니다.
+카메라의 경우, 카메라를 실행시킨 뒤 **rqt** 명령어를 실행함으로써 받아 올 토픽의 이름을 확인할 수 있습니다.
+사용한 장비에 따라 토픽 이름이 다르게 형성되므로, 유저의 환경에 맞춰 코드를 수정하시면 되겠습니다.
+
+<br>
+
+이미지를 취득할 때마다, **imageCallback** 함수가 실행됩니다. 
+해당 함수는 딥러닝 모델을 활용해 QR 코드를 인식하고, 로봇에 메시지를 송신하는 역할을 합니다.
+
+<br>
+
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/84503980/206850899-9dbc7104-6b0f-446c-9cbe-9475a99c280a.png" width="50%" height="50%" alt="text" width="number" />
+      </p>
+      
+<br/>
+
+함수
+
 
 ```
 
