@@ -44,10 +44,10 @@ Linux 환경에서 ROS의 Rviz, Gazebo, Moveit 패키지를 활용하여 프로�
   * [Depth Camera](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Depth_Camera_Manual.md)
   * [USB Camera](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Webcam_Manual.md)
   
-* ### Tutorial: Palletizing
+* ### Tutorial: Palletizing (Demo)
   * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Indy10/Demo_Palletizing.md)
 
-* ### Tutorial: Classification & Pick-Place
+* ### Tutorial: Classification & Pick-Place (Demo)
   * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/UR5e/Demo_Classification_Automate_using_QR_Code.md)
 
 * ### TroubleShooting
