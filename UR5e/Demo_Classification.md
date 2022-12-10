@@ -140,9 +140,14 @@ cnt == 4 일 때, 컨베이어 벨트를 통해 정해진 위치에 물품이 �
 
 이번 절에서는, ur5e에 동작 명령을 내릴 때 주의해야 할 부분에 대해 집중적으로 다루겠습니다.
 
-<br>
+<br><br>
 
 **초기 설정**
+
+먼저, 메시지 송-수신을 위한 노드를 형성합니다. 이후, **Image_Processing.py** 로부터 송신된 메시지를 수신합니다. <br>
+**msgcallback** 함수를 통해 수신된 값을 로봇의 제어 변수에 할당합니다.
+
+**spin** 부분은, callback 함수를 호출하기 위한 부분입니다.
 
 ```
 ros::init(argc, argv, "MIP_Closed_loop_system");
@@ -153,13 +158,46 @@ ros::AsyncSpinner spinner(1);
 spinner.start();
 ```
 
-먼저, 메시지 송-수신을 위한 노드를 형성합니다. 이후, **Image_Processing.py** 로부터 송신된 메시지를 수신합니다. <br>
-**msgcallback** 함수를 통해 수신된 값을 로봇의 제어 변수에 할당합니다.
+<br>
 
-**spin** 부분은, callback 함수를 호출하기 위한 부분입니다.
+아래 부분은, 로봇을 움직이는 기구학/역기구학 부분을 다루는 **moveit** 패키지를 활용하여 로봇의 환경 설정을 해 주는 부분입니다.
 
+```
+/* init moveit*/
+moveit::planning_interface::MoveGroupInterface arm("manipulator");
+arm.setGoalJointTolerance(0.01);
+arm.setMaxAccelerationScalingFactor(1);
+arm.setMaxVelocityScalingFactor(1);
+```
 
+<br>
 
+**moveit setup assistant** 를 통해, 홈위치 & 영위치를 비롯한 다양한 자세를 설정할 수 있습니다. <br>
+아래는, 사전에 설정해 두었던 **stand_by** 라는 이름의 자세로 로봇을 움직이기 위한 명령입니다.
+
+**moveit setup assistant** 사용법이 궁금하다면, 이 [링크]()를 참조하십시오
+
+```
+/*move to setted pose*/
+arm.setNamedTarget("stand_by");
+arm.move();
+```
+
+<br>
+
+아래는, 현재 로봇의 조인트 상태 및 자세 정보를 가져오는 부분입니다.
+로봇에 특정 명령을 내릴 때마다 
+
+```
+/*getting joint state*/
+vector<double> currentJointState=arm.getCurrentJointValues();
+
+/*get cartesian position and orientation*/
+geometry_msgs::Pose movePose;
+geometry_msgs::PoseStamped currentPose;
+currentPose=arm.getCurrentPose();
+cout<<currentPose<<endl;
+```
 
 
 <br><br>
