@@ -109,7 +109,7 @@ rospy.Subscriber("usb_cam/image_raw", Image, imageCallback)
 <br>
 
 <p align="center">
-      <img src="https://user-images.githubusercontent.com/84503980/206851091-ae26ac73-ff08-4861-b380-fa9162ba55f7.png" width="50%" height="50%" alt="text" width="number" />
+      <img src="https://user-images.githubusercontent.com/84503980/206851091-ae26ac73-ff08-4861-b380-fa9162ba55f7.png" width="25%" height="25%" alt="text" width="number" />
       </p>
       
 <br/>
