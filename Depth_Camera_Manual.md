@@ -21,7 +21,6 @@ sudo apt-get install ros-$ROS_DISTRO-realsense2-camera
 sudo apt-get install ros-melodic-realsense2*
 
 sudo apt install --reinstall ros-melodic-realsense2-description
-
 ```
 
 ### Realsense Depth Camera 실행
@@ -30,7 +29,6 @@ roslaunch realsense2_camera rs_camera.launch
 
 # Depth & Color 프레임 사이즈를 동일하게 조절하여 이미지를 취득하고 싶다면?
 roslaunch realsense2_camera rs_camera.launch align_depth:=true
-
 ```
 launch 파일은 opt/ros/melodic/share/realsense_camera_launch 에 저장되어 있습니다.
 
