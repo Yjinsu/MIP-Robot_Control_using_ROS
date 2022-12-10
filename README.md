@@ -1,35 +1,54 @@
 # MIP-Robot_Control_using_ROS
 
+<br>
+
 ## Introduction
 
-이 Repository는 한동대학교 2022년 2학기에 진행된 기전융합설계, <br>
-**Simulation Environment Establishment for Robot Arm Control** 에 대한 설치 파일 및 튜토리얼이 포함되어 있습니다.
+이 Repository는 한동대학교 2022년 2학기에 진행된 기전융합설계(Mechatronics Integration Projects), <br>
+**Simulation Environment Establishment for Robot Arm Control** 에 대한 설치 파일 및 튜토리얼로 구성되었습니다.
+
+<br>
+
+본 프로젝트는 산업 현장의 주요 관심사 중 하나인 **공정 자동화** 를, <br>
+로봇 팔을 활용하여 효과적으로 구축하기 위한 방법을 제시하기 위한 목적으로 수행되었습니다. <br>
+
+센서로부터 취득한 데이터를 기반으로 로봇에 명령을 내리는 제어 프로그램을 작성하고, <br>
+해당 제어 프로그램을 시뮬레이션 환경에서 먼저 실행시킴으로써 안전한 자동화 공정을 구축하고자 합니다.
+
+매니퓰레이터 모델은 **INDY-10 (Neuromeka)**과 **UR5e (Universal Robot)** 을 사용하였으며, <br>
+Linux 환경에서 ROS의 Rviz, Gazebo, Moveit 패키지를 활용하여 프로그램을 작성하였습니다.
+
+<br>
+
+**본 프로젝트는 한동대학교 김영근 교수님의 지도아래 진행되었습니다.**
+
+<br>
+
+## Requirements
+
+본 프로젝트는, Linux - ubuntu 18.04 환경에서 ROS-melodic을 활용하여 진행했습니다. <br>
+
+**python**과 **C++**을 활용하여 프로그램을 작성했기에, 해당 언어에 대한 활용 능력이 요구됩니다.
 
 
 <br>
 
-스마트팩토리의 한 공정에 대한 산업로봇의 제어 코드를 작성하고, 
+## Contents
+* ### Tutorial: How to use INDY-10
+  * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Indy10/Indy10_Manual.md)
 
+* ### Tutorial: How to use UR5e
+  * [Reference Link](https://ykkim.gitbook.io/dlip/installation-guide/ubuntu/ubuntu-18.04-installation)
 
-작성된 코드를 Gazebo에서 안정성 테스트를 거친 후 실제 로봇에 적용하는 시뮬레이션 환경을 구축하는 것이 목적이었습니다. 시뮬레이션 테스트 및 실제 구현해본 공정은 자동 분류 공정입니다.
+* ### Tutorial: How to use vision sensor
+  * [Depth Camera](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Depth_Camera_Manual.md)
+  * [USB Camera](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Webcam_Manual.md)
+  
+* ### Tutorial: Palletizing
+  * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Indy10/Demo_Palletizing.md)
 
-매니퓰레이터 모델은 **INDY-10 (Neuromeka)**로 로봇 제어를 위한 Linux - ROS를 사용했으며, ROS의 Rviz와 Gazebo 프로그램으로 프로젝트를 진행했습니다.
+* ### Tutorial: Classification & Pick-Place
+  * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/UR5e/Demo_Classification_Automate_using_QR_Code.md)
 
-Rviz는 로봇의 상태를 시각화해주거나, 움직임을 제어하는데 도움을 주는 Move-it 등을 제공해주는 툴입니다.
-
-Gazebo는 로봇의 물리 정보 및 외형 모델파일로 로봇을 가상의 공간에 만들어 움직임 및 제어 등을 테스트 할 수 있는 시뮬레이터입니다.
-
-로봇뿐만 아니라, 사용한 그리퍼 EGP-64 및 Point Grey 카메라에 대한 연결 및 사용법 또한 Repository에 포함되어 있습니다.
-
-**본 프로젝트는 한동대학교 김영근 교수님의 지도아래 진행되었습니다**
-
-Requirements
-ROS를 사용하기 위해 Linux- ubuntu 18.04 버전이 필요합니다.
-
-또한 WIFI 연결이 가능한 노트북 or 데스크탑이여야 하며, 이 프로젝트에서 사용한 노트북의 사양은 CPU - Intel i5-1135G7, RAM - 16GB, Graphic card - MX450 입니다. 참고로 윈도우와 리눅스 듀얼 부팅 환경에서 프로젝트를 진행했는데 문제는 없었습니다.
-
-INDY-10 전용 태블릿은 로봇 연결 및 상태 확인과 간단한 제어에 유용함으로 실험할 때 같이 사용하시면 좋습니다.
-
-ROS에서 사용된 코드들은 대부분 **C++**로 작성되었음으로, C++을 잘 다룰수록 수월해집니다.
-
-ROS는 Linux에서 Python 2 버전으로 작동됩니다. Linux의 기본 프로그램이 Python 3버전일 경우 작동되지 않습니다.
+* ### TroubleShooting
+  * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Trouble_Shooting.md)
