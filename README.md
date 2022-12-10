@@ -15,7 +15,7 @@
 센서로부터 취득한 데이터를 기반으로 로봇에 명령을 내리는 제어 프로그램을 작성하고, <br>
 해당 제어 프로그램을 시뮬레이션 환경에서 먼저 실행시킴으로써 안전한 자동화 공정을 구축하고자 합니다.
 
-매니퓰레이터 모델은 **INDY-10 (Neuromeka)**과 **UR5e (Universal Robot)** 을 사용하였으며, <br>
+매니퓰레이터 모델은 **INDY-10 (Neuromeka)** 과 **UR5e (Universal Robot)** 을 사용하였으며, <br>
 Linux 환경에서 ROS의 Rviz, Gazebo, Moveit 패키지를 활용하여 프로그램을 작성하였습니다.
 
 <br>
