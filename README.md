@@ -38,7 +38,7 @@ Linux 환경에서 ROS의 Rviz, Gazebo, Moveit 패키지를 활용하여 프로�
   * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Indy10/Indy10_Manual.md)
 
 * ### Tutorial: How to use UR5e
-  * [Reference Link](https://ykkim.gitbook.io/dlip/installation-guide/ubuntu/ubuntu-18.04-installation)
+  * [Reference Link](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/UR5e/UR5e_Maunal.md)
 
 * ### Tutorial: How to use vision sensor
   * [Depth Camera](https://github.com/Yjinsu/MIP-Robot_Control_using_ROS/blob/main/Depth_Camera_Manual.md)
